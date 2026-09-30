@@ -1,6 +1,6 @@
 # UltraGPS Models
 
-3D-printable hardware for the St. Mary's University **UltraGPS** indoor
+3D-printable models for the St. Mary's University **UltraGPS** indoor
 positioning system, developed as part of graduate research.
 
 This repository holds the SolidWorks sources and STL exports for every printed
