@@ -1,0 +1,32 @@
+site_name: UltraGPS Models
+site_description: >-
+  3D-printed hardware for the St. Mary's University UltraGPS indoor
+  positioning system — arena base, receiver towers, and transmitter.
+# Project-page URL on GitHub Pages: https://<user>.github.io/<repo>/
+site_url: https://imperious22m.github.io/UltraGPS-Models/
+
+repo_url: https://github.com/Imperious22M/UltraGPS-Models
+repo_name: Imperious22M/UltraGPS-Models
+
+# Built-in theme — no extra pip packages required.
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Arena Assembly: arena-assembly.md
+  - Receiver Assembly: receiver-assembly.md
+  - Transmitter Assembly: transmitter-assembly.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+# requirements.txt lives in docs/ for convenience but is a build input, not a
+# page.
+exclude_docs: |
+  requirements.txt
+
+# Fail the build on broken internal links / missing nav pages
+strict: true
