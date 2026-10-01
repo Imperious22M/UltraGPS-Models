@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://imperious22m.github.io/UltraGPS-Models/receiver-assembly/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Receiver Assembly - UltraGPS Models</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Receiver Assembly";
+        var mkdocs_page_input_path = "receiver-assembly.md";
+        var mkdocs_page_url = "/UltraGPS-Models/receiver-assembly/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UltraGPS Models
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Receiver Assembly</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#parts">Parts</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#printing">Printing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#building-a-tower">Building a tower</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../transmitter-assembly/">Transmitter Assembly</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pvc-arena-assembly/">PVC Arena Assembly</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UltraGPS Models</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Receiver Assembly</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Imperious22M/UltraGPS-Models/edit/master/docs/receiver-assembly.md">Edit on Imperious22M/UltraGPS-Models</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="receiver-assembly">Receiver Assembly<a class="headerlink" href="#receiver-assembly" title="Permanent link">&para;</a></h1>
+<p>A receiver tower raises one receiver off the arena frame and holds it pointed
+into the arena. This page covers one tower; the system uses six in it's default configuration.</p>
+<h2 id="parts">Parts<a class="headerlink" href="#parts" title="Permanent link">&para;</a></h2>
+<p>STL exports are in <code>Receiver-Arena-Models/STL/Receiver-Holder/</code>; SolidWorks
+sources in <code>Receiver-Arena-Models/Solidwork/Receiver-Parts/</code>. Sizes are the
+STL bounding box in millimetres (X × Y × Z as exported).</p>
+<table>
+<thead>
+<tr>
+<th>STL</th>
+<th>Size (mm)</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Receiver-tower-base</code></td>
+<td>100 × 80 × 100</td>
+<td>Foot of the tower. Seats on the arena frame or a <a href="../pvc-arena-assembly/">PVC adapter</a>.</td>
+</tr>
+<tr>
+<td><code>Receiver-tower-middle-connector</code></td>
+<td>20 × 80 × 20</td>
+<td>80 mm riser between base and top. Stack more than one to raise the receiver.</td>
+</tr>
+<tr>
+<td><code>Receiver-tower-top-ultrasonic-holder</code></td>
+<td>45 × 55.4 × 20</td>
+<td>Cradle for the receiver module and its board.</td>
+</tr>
+</tbody>
+</table>
+<p>The SolidWorks assemblies are the reference for how the parts fit:</p>
+<table>
+<thead>
+<tr>
+<th>Assembly</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ReceiverAssem.SLDASM</code></td>
+<td>The full tower</td>
+</tr>
+<tr>
+<td><code>receiverwithboardholder.SLDASM</code></td>
+<td>The receiver and its board (<code>ReceiverWboard.SLDPRT</code>) seated in <code>Receiver-tower-top-ultrasonic-holder</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="printing">Printing<a class="headerlink" href="#printing" title="Permanent link">&para;</a></h2>
+<p>Print one of each part per tower. They are exported in their intended print
+orientation; the base is the tallest at 100 mm. No supports should be needed
+for the connector or holder.</p>
+<h2 id="building-a-tower">Building a tower<a class="headerlink" href="#building-a-tower" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Press the <strong>middle connector</strong> into the socket on top of the <strong>base</strong>. Add
+   a second connector (or a <code>standExtender</code> from the PVC parts — it is the
+   same part) if the receiver needs to sit higher.</li>
+<li>Seat the receiver and its board into the <strong>top holder</strong>, as shown in
+   <code>receiverwithboardholder.SLDASM</code>.</li>
+<li>Seat the loaded holder on the top of the connector.</li>
+<li>Stand the tower on the arena frame — directly, or on a
+   <a href="../pvc-arena-assembly/">PVC adapter</a> — and turn it so the receiver faces the
+   centre of the arena.</li>
+<li>Label the tower with its receiver number (1–6) so it can be matched to its
+   position later.</li>
+</ol>
+<p>All six towers should end up with the receiver at the same height.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../transmitter-assembly/" class="btn btn-neutral float-right" title="Transmitter Assembly">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Imperious22M/UltraGPS-Models" class="fa fa-code-fork" style="color: #fcfcfc"> Imperious22M/UltraGPS-Models</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../transmitter-assembly/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="3D-printed hardware for the St. Mary's University UltraGPS indoor positioning system." /><link rel="canonical" href="https://imperious22m.github.io/UltraGPS-Models/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>UltraGPS Models</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/UltraGPS-Models/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> UltraGPS Models
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#repository-layout">Repository layout</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="receiver-assembly/">Receiver Assembly</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="transmitter-assembly/">Transmitter Assembly</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="pvc-arena-assembly/">PVC Arena Assembly</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">UltraGPS Models</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Imperious22M/UltraGPS-Models/edit/master/docs/index.md">Edit on Imperious22M/UltraGPS-Models</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ultragps-models">UltraGPS Models<a class="headerlink" href="#ultragps-models" title="Permanent link">&para;</a></h1>
+<p>3D-printable models for the St. Mary's University <strong>UltraGPS</strong> indoor
+positioning system, developed as part of graduate research.</p>
+<p>This repository holds the SolidWorks sources and STL exports for every printed
+part in the system. In each major folder of the repository, the <strong>Solidworks</strong> 
+folder holds all of the solidworks models and the <strong>STL</strong> folder holds all of the
+printables STL files.</p>
+<p>In <strong>Receiver-Arena-Models</strong> you can find the components that interface between PVC pipes and the receiver components as well as the components that make up the receiver tower.</p>
+<p>In <strong>Transmitter-Models</strong> you can find the components that make the example transmitter tower.</p>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="receiver-assembly/">Receiver Assembly</a></strong> — building a receiver tower.</li>
+<li><strong><a href="transmitter-assembly/">Transmitter Assembly</a></strong> — building the transmitter tower,
+  and the transducer holder.</li>
+<li><strong><a href="pvc-arena-assembly/">PVC Arena Assembly</a></strong> — using the printed adapters
+  that join a receiver tower to the PVC pipe frame.</li>
+</ul>
+<h2 id="repository-layout">Repository layout<a class="headerlink" href="#repository-layout" title="Permanent link">&para;</a></h2>
+<pre><code>Transmitter-Models/
+  Solidwork/   Solidwork parts
+  STL/         Tower sections and transducer holders
+Receiver-Arena-Models/
+  Solidwork/
+    Receiver-Parts/          Receiver tower parts + assemblies
+    PVC-Arena-Base-Parts/    PVC-pipe arena base extenders and PCB holder
+  STL/
+    Receiver-Holder/         Receiver tower exports
+    Arena-Base/              (empty — arena base STLs not yet exported)
+docs/          This site
+</code></pre>
+<p>Every <code>.SLDPRT</code> that has an STL export shares its basename with that STL, so
+<code>Transmitter-tower-middle.SLDPRT</code> is the source of
+<code>Transmitter-tower-middle.STL</code>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="receiver-assembly/" class="btn btn-neutral float-right" title="Receiver Assembly">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Imperious22M/UltraGPS-Models" class="fa fa-code-fork" style="color: #fcfcfc"> Imperious22M/UltraGPS-Models</a>
+        </span>
+    
+    
+    
+      <span><a href="receiver-assembly/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-10-01 03:52:34.870834+00:00
+-->
