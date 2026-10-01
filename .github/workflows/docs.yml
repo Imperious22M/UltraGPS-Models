@@ -5,12 +5,10 @@ name: Deploy Docs
 #   https://imperious22m.github.io/UltraGPS-Models/
 #
 # Same mechanism as the UltraGPS-Arduino / -Ground / -Control repositories.
-# The only difference is the branch name: this repository's stable branch is
-# `Release` (capital R) rather than `release`.
 
 on:
   push:
-    branches: [ Release ]
+    branches: [ release ]
     paths:
       - 'docs/**'
       - 'mkdocs.yml'

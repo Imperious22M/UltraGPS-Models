@@ -47,7 +47,7 @@ pip install -r docs/requirements.txt
 
 ### Publishing Flow
 
-Pushing a change to `docs/`, to `mkdocs.yml`, or to the `Release` branch runs 
+Pushing a change to `docs/`, to `mkdocs.yml`, or to the `release` branch runs 
 `.github/workflows/docs.yml`, which builds the site and pushes it to the `gh-pages` 
 branch that GitHub Pages serves. The workflow can also be run by hand from the Actions 
 tab.
