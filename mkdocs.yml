@@ -14,9 +14,9 @@ theme:
 
 nav:
   - Home: index.md
-  - Arena Assembly: arena-assembly.md
   - Receiver Assembly: receiver-assembly.md
   - Transmitter Assembly: transmitter-assembly.md
+  - PVC Arena Assembly: pvc-arena-assembly.md
 
 markdown_extensions:
   - admonition

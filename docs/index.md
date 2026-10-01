@@ -8,22 +8,17 @@ part in the system. In each major folder of the repository, the **Solidworks**
 folder holds all of the solidworks models and the **STL** folder holds all of the
 printables STL files.
 
-In **Receiver-Arena-Models** you can find the components that interface between PVC pipes and the receiver components and the components that make up the receiver tower.
+In **Receiver-Arena-Models** you can find the components that interface between PVC pipes and the receiver components as well as the components that make up the receiver tower.
 
-In **Transmitter-Models** you can find the components that make the default transmitter tower.
+In **Transmitter-Models** you can find the components that make the example transmitter tower.
 
 ## Documentation
 
 - **[Receiver Assembly](receiver-assembly.md)** — building a receiver tower.
-- **[Transmitter Assembly](transmitter-assembly.md)** — buildinf the transmitter tower,
+- **[Transmitter Assembly](transmitter-assembly.md)** — building the transmitter tower,
   and the transducer holder.
-
-## At a glance
-
-| | |
-|---|---|
-| CAD tool | SolidWorks (`.SLDPRT`, `.SLDASM`, `.SLDDRW`) |
-| Print files | Binary STL, millimetres |
+- **[PVC Arena Assembly](pvc-arena-assembly.md)** — using the printed adapters
+  that join a receiver tower to the PVC pipe frame.
 
 ## Repository layout
 

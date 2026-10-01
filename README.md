@@ -15,8 +15,7 @@ SolidWorks sources and STL exports for every printed part of the system:
 | `docs/` | The documentation site (MkDocs) |
 
 Each subsystem is mirrored as `Solidwork/` (`.SLDPRT` / `.SLDASM` / `.SLDDRW`)
-and `STL/`. Every SolidWorks part that has an STL export
-shares its basename with it.
+and `STL/`. Every SolidWorks part that has an STL export shares its basename with it.
 
 These parts are the physical side of the system whose software lives in
 [UltraGPS-Arduino](https://github.com/Imperious22M/UltraGPS-Arduino) (firmware),
@@ -26,16 +25,14 @@ and [UltraGPS-Control](https://github.com/Imperious22M/UltraGPS-Control)
 
 ## Documentation
 
-The MKDocs documentation can be found [here].(https://imperious22m.github.io/UltraGPS-Models)
+The MKDocs documentation can be found [here](https://imperious22m.github.io/UltraGPS-Models).
 
-- **Home** — how the printed parts fit into the rest of the system, and a
-  full inventory of the STLs with print dimensions.
-- **Arena Assembly** — receiver layout and geometry, the PVC base parts, and
-  entering the arena into the control software.
-- **Receiver Assembly** — building a receiver tower and wiring it to the
-  base station.
-- **Transmitter Assembly** — the transmitter tower, transducer holders, and
-  the transmitter-station electronics.
+- **Home** — what is in the repository and how it is laid out.
+- **Receiver Assembly** — building a receiver tower.
+- **Transmitter Assembly** — building the transmitter tower and the
+  transducer holder.
+- **PVC Arena Assembly** — using the printed adapters that join a receiver
+  tower to the PVC pipe frame.
 
 ### Previewing the docs locally
 
