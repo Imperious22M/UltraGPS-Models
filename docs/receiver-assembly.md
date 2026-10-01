@@ -2,7 +2,8 @@
 
 Each of the six receivers is an ultrasonic receiver module on a small PCB,
 raised off the arena floor on a printed tower and wired back to the
-base-station Arduino. This page covers one tower; build six.
+base-station Arduino. This page covers one tower, six are needed for the default 
+system setup.
 
 ## Parts
 
@@ -23,13 +24,6 @@ The SolidWorks assemblies show how they go together:
 |---|---|
 | `ReceiverAssem.SLDASM` | Full tower |
 | `receiverwithboardholder.SLDASM` | Receiver module + PCB in the top holder (`ReceiverWboard.SLDPRT` in `Receiver-tower-top-ultrasonic-holder`) |
-
-!!! note "Part naming"
-    The STLs were renamed on export and the SolidWorks parts were renamed to
-    match on 2026-09-30. The assemblies still reference the old names (`Base`,
-    `standExtender`, `ReceiverWBoardHolder`); when SolidWorks asks for a
-    missing component, browse to the renamed file and save. The original
-    names also survive in each STL's 80-byte header.
 
 ### Electronics (per receiver)
 
@@ -73,39 +67,3 @@ The pins are configured `INPUT_PULLUP`; an unconnected receiver reads as a
 constant high and reports `0` ticks, which the control software's sanity filter
 then drops. Fewer than six receivers works; more than six needs firmware
 changes.
-
-### Base-station Arduino
-
-The base station is the hub the receivers plug into. Its full pin map, from the
-firmware:
-
-| Pin | Direction | Signal |
-|---|---|---|
-| `2` | — | Radio IRQ (declared, unused on the base station) |
-| `3`, `4`, `6` | OUT | `STAT_1`–`STAT_3` LEDs (reserved) |
-| `5` | OUT | Trigger pulse, 50 µs, fired by the Timer1 ISR |
-| `7` | OUT | `PULSE_TRIG` LED — lit while a pulse is in flight |
-| `8` | OUT | `RADIO_STATUS` LED — solid once the radio initialises; slow blink = radio init failed |
-| `9` / `10` | OUT | nRF24L01+ `CE` / `CSN` |
-| `11`–`13` | — | Hardware SPI to the radio |
-| `A0`–`A5` | IN (pull-up) | Echo lines from receivers 1–6 |
-
-Put a 10 µF capacitor across the nRF24L01+ module's `VCC`/`GND`; the Uno's
-3.3 V regulator handles the radio's current bursts poorly.
-
-## Checking a receiver
-
-With the base station flashed and connected, open a 38400 bps serial monitor
-and send `P`. The response is one line with six tick counts in `A0`–`A5`
-order:
-
-```
-N: 4404, 3226, 4063, 4041, 3133, 4109
-```
-
-A `0` in a slot means that receiver produced no usable echo — not wired, out of
-range, or the transmitter did not fire. The counts are raw sampling-loop
-iterations, not distances; the **Calibration** panel in `ultragps-control`
-turns them into centimetres with `distance = tick × slope + intercept` per
-receiver. A receiver whose calibration histogram is broad or double-peaked is
-picking up reflections rather than the direct pulse — re-aim it or raise it.

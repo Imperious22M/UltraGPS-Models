@@ -57,10 +57,6 @@ The receivers sit on a **PVC-pipe frame**. The printed parts for it are under
 | `circuitBoardHolder.SLDPRT` | Stand-alone holder for a receiver's PCB |
 | `standExtender.SLDPRT` | Plain extender (same part as the receiver tower's middle connector) |
 
-!!! warning "No STL exports yet"
-    `Receiver-Arena-Models/STL/Arena-Base/` is empty. These parts exist only as
-    SolidWorks sources; export them to STL from SolidWorks before printing.
-
 ## Building the arena
 
 1. **Cut and lay out the PVC frame** so the six receiver mounting points land

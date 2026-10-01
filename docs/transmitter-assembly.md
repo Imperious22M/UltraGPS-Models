@@ -36,15 +36,6 @@ The **multi** holder's 68 mm footprint matches the top attachment; the
 **single** holder is a small clip for one HC-SR04-style transducer. Print the
 pair for whichever head you are building.
 
-!!! note "Part naming"
-    The STL and SolidWorks names now match, but a few are worth knowing:
-    `Transmitter-holder-multi-bottom` was exported from the part originally
-    called *Transmitter HolderTop*, and `Transmitter-tower-top-attachment`
-    from *Transmitter base attachment*. The `single` holder sources live under
-    `Receiver-Arena-Models/Solidwork/Receiver-Parts/` despite being
-    transmitter parts. `Transmitter-holder-multi-top.STL` is a 3.5 MB mesh
-    (72k triangles) — slice it once and keep the G-code.
-
 ### Electronics
 
 | Item | Qty | Notes |
@@ -68,58 +59,3 @@ pair for whichever head you are building.
    of the arena.
 5. Mount the transmitter-station Uno, radio, and power on the same platform
    and wire the transducer's trigger to pin `5`.
-
-## Transmitter-station wiring
-
-| Pin | Direction | Signal |
-|---|---|---|
-| `2` | IN | nRF24L01+ `IRQ` — must be an interrupt-capable pin; `onRadioIRQ()` runs on the falling edge |
-| `3`, `4`, `6` | OUT | `STAT_1`–`STAT_3` LEDs (reserved) |
-| `5` | OUT | Trigger to the ultrasonic transmitter, 50 µs pulse |
-| `7` | OUT | `PULSE_TRIG` LED — lit after the first trigger fires |
-| `8` | OUT | `RADIO_STATUS` LED — solid once the radio initialises; slow blink = radio init failed |
-| `9` / `10` | OUT | nRF24L01+ `CE` / `CSN` |
-| `11`–`13` | — | Hardware SPI to the radio |
-
-Unlike the base station, the transmitter station has **no serial command
-interface**. Once flashed it runs on its own: every radio packet from the base
-station nudges its Timer1 back into phase (`pllCorrect`), and every compare
-match at 10 Hz fires the trigger after the `tick_delay` the packet carried
-(2 ms by default, giving the receivers time to settle into receive mode).
-
-!!! note "It is the radio *receiver*"
-    The firmware directory is `transmitter-station/` because the board drives
-    the ultrasonic transmitter, but on the radio link it is the receiving end —
-    its source comments call it the *receiver program*. Both are right.
-
-## Flashing and checking
-
-Flash the prebuilt image from the
-[UltraGPS-Arduino releases](https://github.com/Imperious22M/UltraGPS-Arduino/releases/latest):
-
-```bash
-arduino-cli upload -p /dev/ttyACM1 -b arduino:avr:uno \
-    --input-file ultragps-transmitter-station-v1.0.hex
-```
-
-Then:
-
-1. Power the transmitter station. `RADIO_STATUS` (pin 8) should go solid. If it
-   blinks on a two-second cycle the radio did not initialise — check the SPI
-   wiring and the capacitor.
-2. Send `P` to the base station over serial. `PULSE_TRIG` (pin 7) on the
-   transmitter lights on the first trigger, and the base station prints six
-   non-zero tick counts if the transducer has line of sight to the receivers.
-3. Place the transmitter on each calibration point and run **Calibration** in
-   `ultragps-control`, then open **Position** to see it tracked.
-
-The pulse rate, radio channel, and pipe addresses are compile-time settings
-that must match on both Arduinos — see the
-[firmware configuration reference](https://imperious22m.github.io/UltraGPS-Arduino/configuration/).
-
-## Work in progress
-
-`scratch/` (git-ignored) holds unfinished transmitter-side parts:
-`Doppler Probe Extension.SLDPRT`, `transceiver.SLDPRT`, `leftside` /
-`rightside` halves, and a set of weighted base variants
-(`Base_*_weighted.stl`). None are part of the current assembly.
